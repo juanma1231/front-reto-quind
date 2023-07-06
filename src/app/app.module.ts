@@ -1,16 +1,56 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { CreatePersonComponent } from './create-person/create-person.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { MakeTransactionComponent } from './make-transaction/make-transaction.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ProdcutsComponent } from './prodcuts/prodcuts.component';
+
+const routes: Routes = [
+  {
+    path:'prduct/create',
+    component:CreateProductComponent
+  }
+  ,
+  {
+    path:'transaction',
+    component:MakeTransactionComponent
+  }
+  ,
+  {
+    path:'person/create',
+    component:CreatePersonComponent
+  },
+  {
+    path:'product/list',
+    component:ProdcutsComponent
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    CreatePersonComponent,
+    CreateProductComponent,
+    MakeTransactionComponent,
+    ProdcutsComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+    RouterModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,33 @@
+<h1>Crear una Persona</h1>
+<form novalidate [formGroup]="person" (ngSubmit)="subtmit(person)">
+    <label>
+        <span>Tipo de Identifiacion</span>
+        <input placeholder="Tipo Identifiacion" type="text" formControlName="idType" >
+    </label>
+    <label>
+        <span>Numero de Identifiacion</span>
+        <input type="number" formControlName="idNumber">
+    </label>
+    <label>
+        <span>Nombre completo</span>
+        <input type="text" formControlName="name">
+    </label>
+    <label>
+        <span>Apellidos</span>
+        <input type="text" formControlName="lastName">
+    </label>
+    <label >
+        <span>Ingrese su email</span>
+        <input type="text" formControlName="email">
+    </label>
+    <label>
+        <span>Ingrese su fecha de naciemiento</span>
+        <input type="text" formControlName="birthDay">
+    </label>
+    <div class="btn">
+        <button class="registro" type="submit" [disabled]="person.invalid">Regidtrar</button>
+    </div>
+
+    <p>{{message}}</p>
+
+</form>
