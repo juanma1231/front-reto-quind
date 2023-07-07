@@ -1,0 +1,17 @@
+<p>tranferencia works!</p>
+<form novalidate [formGroup]="transaction" (ngSubmit)="submit(transaction)">
+    <label>
+        <span>Tipo de transaccion</span>
+        <input placeholder="Tipo de transaccion" type="text" formControlName="transaccionType" >
+    </label>
+    <label>
+        <span>Monto</span>
+        <input type="number" formControlName="monto">
+    </label>
+    <div class="btn">
+        <button class="registro" type="submit" [disabled]="transaction.invalid">Crear producto</button>
+    </div>
+
+    <p>{{message}}</p>
+
+</form> 

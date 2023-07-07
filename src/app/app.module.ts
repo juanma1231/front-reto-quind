@@ -12,6 +12,7 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { MakeTransactionComponent } from './make-transaction/make-transaction.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProdcutsComponent } from './prodcuts/prodcuts.component';
+import { TranferenciaComponent } from './tranferencia/tranferencia.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,11 @@ const routes: Routes = [
   {
     path:'product/list',
     component:ProdcutsComponent
+  },
+  {
+    path:'tranferencia',
+    component: TranferenciaComponent
+
   }
 ];
 
@@ -41,7 +47,8 @@ const routes: Routes = [
     CreatePersonComponent,
     CreateProductComponent,
     MakeTransactionComponent,
-    ProdcutsComponent
+    ProdcutsComponent,
+    TranferenciaComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
