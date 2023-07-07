@@ -8,9 +8,19 @@
         <span>Monto</span>
         <input type="number" formControlName="monto">
     </label>
+    <label>
+        <span>Ingrese el numero de cuenta del Emisor</span>
+        <input type="text" formControlName="accountIdEmisor">
+    </label>
+    <label>
+        <span>Ingrese el numero de cuneta del destinatario</span>
+        <input type="text" formControlName="accounId">
+    </label>
     <div class="btn">
         <button class="registro" type="submit" [disabled]="transaction.invalid">Crear producto</button>
     </div>
+
+
 
     <p>{{message}}</p>
 

@@ -1,21 +1,18 @@
-<p>prodcuts works!</p>
+<h1>Lista de productos</h1>
 
 <div class="container" *ngFor="let product of product">
-    <ul>
+    <ul class="main">
         <div class="datos">
-            {{product.productNumber}} <br> <br>
+           <p>El numero de cuenta es: </p>  {{product.productNumber}} <br> <br>
         </div>
         <div class="datos">
-            {{product.balance}} <br> <br>
+            <p>El saldo disponible de la cuenta es: </p> {{product.balance}} <br> <br>
         </div>
         <div class="datos">
-            {{product.availableBalance}} <br> <br>
+            <p>EL saldo disponible de la cuenta es:</p> {{product.availableBalance}} <br> <br>
         </div>
         <div class="datos">
-            {{product.idClient}} <br> <br>
-        </div>
-        <div class="datos">
-            {{product.balance}} <br> <br>
+            <p>El correo del usaurio: </p>{{product.idClient}} <br> <br>
         </div>
         
         

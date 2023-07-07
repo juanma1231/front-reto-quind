@@ -1,14 +1,8 @@
-<p>create-product works!</p>
-<h1>Hola Mundo</h1>
-<h1>Crear una Persona</h1>
+<h1>Crear un producto</h1>
 <form novalidate [formGroup]="product" (ngSubmit)="submit(product)">
     <label>
         <span>Tipo de cuenta</span>
         <input placeholder="Tipo de cuenta" type="text" formControlName="accountType" >
-    </label>
-    <label>
-        <span>Numero de cuenta</span>
-        <input type="number" formControlName="productNumber">
     </label>
     <label>
         <span>Saldo</span>

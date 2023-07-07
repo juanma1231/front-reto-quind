@@ -14,19 +14,20 @@ export class TranferenciaComponent implements OnInit {
   ngOnInit(): void {
     this.transaction = new FormGroup({
       transaccionType : new FormControl(""),
-      monto : new FormControl(0)
+      monto : new FormControl(0),
+      accounId : new FormControl(""),
+      accountIdEmisor: new FormControl("")
     });
-    console.log(sessionStorage.getItem("accountId"));
     
   }
   constructor(private http:HttpClient){}
 
   submit(transaction: any){
-    var body = {transaccionType:"", monto:0, accountId:sessionStorage.getItem("accountId")};
-    body.accountId = sessionStorage.getItem("accountId");
+    var body = {transaccionType:"", monto:0, accountId:""};
+    body.accountId = this.transaction.get("accountIdEmisor")?.value;
     body.monto = this.transaction.get("monto")?.value;
     body.transaccionType = this.transaction.get("transaccionType")?.value;
-    var accountIdN= 1234567891;
+    var accountIdN= transaction.get('accounId')?.value;
     let response = this.http.post<any>('/transaction/transferencia/'+accountIdN,body);
     response.subscribe((data)=> console.log(data));
   }

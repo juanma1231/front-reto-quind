@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 export interface Transaction{
   transaccionType: string;
   monto:number;
+  accounId:string;
 }
 @Component({
   selector: 'app-make-transaction',
@@ -17,16 +18,16 @@ export class MakeTransactionComponent implements OnInit{
   ngOnInit(): void {
     this.transaction = new FormGroup({
       transaccionType : new FormControl(""),
-      monto : new FormControl(0)
+      monto : new FormControl(0),
+      accounId : new FormControl(0)
     });
-    console.log(sessionStorage.getItem("accountId"));
     
   }
   constructor(private http:HttpClient){}
 
   submit(transaction: any){
-    var body = {transaccionType:"", monto:0, accountId:sessionStorage.getItem("accountId")};
-    body.accountId = sessionStorage.getItem("accountId");
+    var body = {transaccionType:"", monto:0, accountId:""};
+    body.accountId = this.transaction.get("accounId")?.value;
     body.monto = this.transaction.get("monto")?.value;
     body.transaccionType = this.transaction.get("transaccionType")?.value;
 

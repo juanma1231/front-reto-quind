@@ -1,5 +1,4 @@
-<p>make-transaction works!</p>
-<h1>Hola mundo</h1>
+<h1>Crear una transaccion</h1>
 <form novalidate [formGroup]="transaction" (ngSubmit)="submit(transaction)">
     <label>
         <span>Tipo de transaccion</span>
@@ -9,9 +8,14 @@
         <span>Monto</span>
         <input type="number" formControlName="monto">
     </label>
+    <label>
+        <span>Ingrese el numero de la cuenta que desea hacer la transferencia</span>
+        <input type="text" formControlName="accounId">
+    </label>
     <div class="btn">
         <button class="registro" type="submit" [disabled]="transaction.invalid">Crear producto</button>
     </div>
+
 
     <p>{{message}}</p>
 

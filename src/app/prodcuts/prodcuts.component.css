@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.datos{
+    background-color: grey;
+    width: 30%;
+    border: 3px solid white;
+    border-radius: 3px;
+}
+.container{
+    background:linear-gradient(white,#85C1E9);
+}
